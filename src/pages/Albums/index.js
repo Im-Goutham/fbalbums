@@ -42,7 +42,6 @@ class Albums extends Component {
   }
 
   logout= ()=>{
-    console.log('function called ... ')
      this.props.saveUser({});
      window.FB.logout();
      this.props.history.push('/')
@@ -63,9 +62,7 @@ class Albums extends Component {
                     {
                             albums && albums.length > 0  ? (
                                 albums.map((album,key)=>{
-                                //    console.log('album is ',JSON.stringify(album));
                                     let {name,picture} = album;
-                              //      console.log('picture is ',picture);
                                     return    <Card
                                                 key={key}
                                                 image={picture.data.url}

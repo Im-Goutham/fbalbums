@@ -8,7 +8,6 @@ import './index.css';
 class Home extends Component {
 
   responseFacebook =(data)=>{
-      console.log('response from fb is ',JSON.stringify(data));
       if(data.accessToken){
           this.props.saveUser(data);
           this.props.getUserAlbums();

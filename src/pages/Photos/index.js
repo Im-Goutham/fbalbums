@@ -18,7 +18,6 @@ class Photos extends Component {
 
   componentDidMount(){
          const { match: { params } } = this.props;
-         console.log('params are .. ',params);
          this.props.getUserPhotosByAlbum(params.id);
   }  
 
@@ -26,7 +25,6 @@ class Photos extends Component {
   render() {
      let {photos} = this.props;
      let {activeIndex,visible} = this.state;
-     console.log('photos are .. ',photos);
      let previewImages = [];
      if(photos.length > 0){
         previewImages = photos.map((photo,key)=>{
