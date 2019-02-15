@@ -9,9 +9,12 @@ class Home extends Component {
 
   responseFacebook =(data)=>{
       console.log('response from fb is ',JSON.stringify(data));
-      this.props.saveUser(data);
-      this.props.getUserAlbums();
-      this.props.history.push('/me/albums')
+      if(data.accessToken){
+          this.props.saveUser(data);
+          this.props.getUserAlbums();
+          this.props.history.push('/me/albums')
+      }
+    
   }
  
 

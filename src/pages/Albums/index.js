@@ -56,7 +56,7 @@ class Albums extends Component {
     return (
          <React.Fragment>
               <Header as='h2'>
-                  <Image src={user.picture.data.url}  /> Patrick
+                  <Image src={user.picture.data.url}  />  {user.name}
                   <Button basic color='blue' content='Log out' floated='right' onClick={this.logout}/>
               </Header>
               <Card.Group>
