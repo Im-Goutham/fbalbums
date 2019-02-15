@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Redirect, withRouter} from 'react-router-dom';
 import { Button,Header, Card, Image ,Icon} from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import { getUserAlbums } from '../../actions/user';
+import { saveUser, getUserAlbums } from '../../actions/user';
 
 
 class Albums extends Component {
@@ -43,6 +43,7 @@ class Albums extends Component {
 
   logout= ()=>{
     console.log('function called ... ')
+     this.props.saveUser({});
      window.FB.logout();
      this.props.history.push('/')
   }
@@ -95,6 +96,7 @@ const mapStateToProps = (state) => {
   // Get actions to handle store data
   const mapDispatchToProps = (dispatch) => {
     return {
+        saveUser: (data) => dispatch(saveUser(data)),
         getUserAlbums: (data) => dispatch(getUserAlbums(data))
     };
   }

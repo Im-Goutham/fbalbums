@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import FacebookLogin from 'react-facebook-login';
 import { saveUser, getUserAlbums } from '../../actions/user';
@@ -16,6 +16,10 @@ class Home extends Component {
  
 
   render() {
+    let {user} = this.props;
+    if(user){
+        return  <Redirect to="/me/albums"/>
+    }
     return (
          <React.Fragment>
            <div className="login">
